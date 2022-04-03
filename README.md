@@ -2,7 +2,9 @@
 
 Some tweaks on top of Fennel standard REPL.
 
-![xrepl example](https://raw.githubusercontent.com/gbaptista/assets/main/xrepl/xrepl-b.png)
+<div align="center">
+  <img alt="xrepl example" src="https://raw.githubusercontent.com/gbaptista/assets/main/xrepl/xrepl-b.png" width="60%">
+</div>
 
 ## Installing
 
