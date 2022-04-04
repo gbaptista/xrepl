@@ -43,6 +43,14 @@
         (string.find source.short-path "%.lua$"))
     (not (string.find source.short-path "xrepl%.fnl$"))))
 
+(fn xrepl.reverse [list]
+  (let [result []]
+    (var i (length list))
+    (while (> i 0)
+      (table.insert result (. list i))
+      (set i (- i 1)))
+    result))
+
 (fn xrepl.traceback []
   (local sources [])
   (var i 1)
@@ -53,7 +61,7 @@
           (when (xrepl.relevant-source? source) (table.insert sources source))
           (set i (+ i 1)))
         (set i (+ 1 1000)))))
-  sources)
+  (xrepl.reverse sources))
 
 (fn xrepl.print-source! [source]
   (print (.. (sn.yellow source.short-path) ":" (sn.cyan source.line))))
